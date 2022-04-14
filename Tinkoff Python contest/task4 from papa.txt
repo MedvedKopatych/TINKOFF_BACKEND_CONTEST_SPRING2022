@@ -1,0 +1,28 @@
+Стасик!
+Поскольку я не нашел , можно ли менять итератор в цикле for , 
+я его (цикл) заменил на while. 
+Остальное чуть поправил.
+
+def check_cut(stages, step):
+    i=0
+    while i < len(stages):
+        j = i+1
+        if sum(stages[i:j+1]) > step:
+            converted.append(stages[i])
+            i=j
+        elif sum(stages[i:j+1]) < step:
+            while sum(stages[i:j+1]) < step:
+                j += 1
+            if sum(stages[i:j+1]) == step:
+                    converted.append(stages[i:j+1])
+            else:
+                    j -= 1
+                    converted.append(stages[i:j+1])
+            i = j+1
+
+        else:
+            converted.append(stages[i:j + 1])
+            i = j+1
+
+
+    print(converted)
